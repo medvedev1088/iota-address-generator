@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <script src="js/iota.js"></script>
+</head>
+
+<body>
+
+<form>
+  <table>
+    <tr>
+      <td><input type="button" onclick="GenerateAddress('<PUT YOUR 81-CHAR SEED HERE>', 0)" value="Generate Address" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+
+<script>
+  
+  function GenerateAddress(seed,index)
+  {
+    var iota = new IOTA({
+      "host": null,
+      "port": null
+    });
+    console.log(iota.api.__proto__._newAddress(seed, index, 2, true));
+  }
+</script>
